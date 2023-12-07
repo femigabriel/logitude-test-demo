@@ -1,5 +1,12 @@
 <template>
   <div class="app">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
     <div>
       <div class="logo">
         <NuxtLink to="/about">
@@ -79,15 +86,22 @@
                   style="width: 230px; padding: 5px 10px; height: 33px"
                   v-model="password"
                 />
-                <div class="btn-eyes">
-                  <img
+                <div class="btn-eyes" @click="toggleShow">
+                  <!-- <img
                     src="../../images/password_eye.png"
                     draggable="false"
                     title="Hide Password"
                     alt="Hide Password"
                     class="eyes"
                     @click="toggleShow"
-                  />
+                  /> -->
+                  <i
+                    class="fas eyes"
+                    :class="{
+                      'fa-eye-slash': showPassword,
+                      'fa-eye': !showPassword,
+                    }"
+                  ></i>
                 </div>
               </div>
               <span class="valid-feedback" v-if="validation.valid.password">
@@ -209,6 +223,7 @@ export default {
   /* margin-top: 80px; */
   padding-right: 0;
 }
+
 .form-group {
   padding: 20px;
   background: #fff;
