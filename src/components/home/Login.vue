@@ -87,14 +87,7 @@
                   v-model="password"
                 />
                 <div class="btn-eyes" @click="toggleShow">
-                  <!-- <img
-                    src="../../images/password_eye.png"
-                    draggable="false"
-                    title="Hide Password"
-                    alt="Hide Password"
-                    class="eyes"
-                    @click="toggleShow"
-                  /> -->
+           
                   <i
                     class="fas eyes"
                     :class="{
@@ -104,9 +97,9 @@
                   ></i>
                 </div>
               </div>
-              <span class="valid-feedback" v-if="validation.valid.password">
+              <!-- <span class="valid-feedback" v-if="validation.valid.password">
                 {{ validation.valid.password }}
-              </span>
+              </span> -->
 
               <span class="error-message" v-if="validation.invalid.password">
                 {{ validation.invalid.password }}
